@@ -2,5 +2,5 @@ from django.urls import path
 from ..views import home
 
 urlpatterns = [
-    path('index', home.index, name='index'),
+    path('home/', home.index, name='home'),
 ]

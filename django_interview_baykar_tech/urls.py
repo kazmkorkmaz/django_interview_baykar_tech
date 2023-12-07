@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from baykar_tech_uav_rental.urls import auth, home, category, uav, rental
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/home/', permanent=True)),
     path('admin/', admin.site.urls),
     path('', include(auth.urlpatterns)),
     path('', include(home.urlpatterns)),
