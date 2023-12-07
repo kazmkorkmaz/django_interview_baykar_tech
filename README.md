@@ -28,17 +28,16 @@ This project is a web application built with Python, Django, PostgreSQL,for mana
 
 Make sure you have the following installed:
 
-- Python 3.x
-- Django (version)
+- Python
+- Django
 - PostgreSQL
-- Django Rest Framework (version)
 
 ## Getting Started
 
 - Clone the repository:
 
   ```bash
-  git clone https://github.com/your-username/baykar-tech-uav-rental.git
+  git clone https://github.com/kazmkorkmaz/baykar-tech-uav-rental.git
   ```
 
 ## Navigate to the project directory:
@@ -50,7 +49,7 @@ Make sure you have the following installed:
 - pip install -r requirements.txt
 - Apply migrations:
 
-python manage.py migrate
+- python manage.py migrate
 
 ## Run the development server:
 
