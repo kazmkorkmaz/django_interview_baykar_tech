@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+
+<form method="get" class="form-inline mb-3">
+    <div class="row">
+        {% for field in queryset %}
+        <div class="col-md-2">
+            {{ field|as_crispy_field }}
+        </div>
+        {% endfor %}
+        <div class="col-md-2 d-flex align-items-center text-end mt-2">
+            <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i> Filter</button>
+        </div>
+    </div>
+
+</form>

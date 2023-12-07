@@ -1,0 +1,6 @@
+{% extends 'baykar_tech_uav_rental/include/update_form.html' %}
+
+{% block title %}Rental{% endblock %}
+{% block form_action %}{% url 'rental_update' slug=rental.slug %}{% endblock %}
+{% block list_name %}Rental{% endblock %}
+{% block back_url %}{% url 'rental_list' %}{% endblock %}

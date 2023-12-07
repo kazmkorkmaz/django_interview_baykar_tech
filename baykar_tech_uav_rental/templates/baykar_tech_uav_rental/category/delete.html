@@ -1,0 +1,6 @@
+{% extends 'baykar_tech_uav_rental/include/delete_form.html' %}
+
+{% block model_name %}Category{% endblock %}
+{% block form_action %}{% url 'category_delete' slug=category.slug %}{% endblock %}
+{% block cancel_url %}{% url 'category_list' %}{% endblock %}
+{% block instance %}{{ category.name }}{% endblock %}

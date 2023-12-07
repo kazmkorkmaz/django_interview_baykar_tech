@@ -1,0 +1,7 @@
+{% extends 'baykar_tech_uav_rental/include/delete_form.html' %}
+
+{% block model_name %}Rental{% endblock %}
+{% block form_action %}{% url 'uav_delete' slug=rental.slug %}{% endblock %}
+{% block cancel_url %}{% url 'rental_list' %}{% endblock %}
+{% block instance %}rental for {{ rental.uav }} dates between {{ rental.start_date }}{ { rental.end_date }} by
+{{rental.user }}{% endblock %}

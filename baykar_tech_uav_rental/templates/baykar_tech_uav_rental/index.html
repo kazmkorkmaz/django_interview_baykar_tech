@@ -1,0 +1,63 @@
+{% extends 'baykar_tech_uav_rental/base/base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block site_css %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12 mt-3 mb-1">
+    <h4>Baykar Tech UAV Rental Home Page</h4>
+    <p>Welcome...</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xl-4">
+    <div class="card">
+      <div class="card-header">
+        <a href="{% url 'uav_list' %}">
+          <h4> <i class="fa fa-plane"></i> Uavs</h4>
+        </a>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Total UAV Count: {{ uav_count }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card">
+      <div class="card-header">
+        <a href="{% url 'rental_list' %}">
+          <h4><i class="fa fa-registered"></i> Rentals</h4>
+        </a>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Total Rentals Count: {{ rental_count }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card">
+      <div class="card-header">
+        <a href="{% url 'category_list' %}">
+          <h4><i class="fa fa-clone"></i> Categories</h4>
+        </a>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Total Categories Count: {{ category_count }} </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

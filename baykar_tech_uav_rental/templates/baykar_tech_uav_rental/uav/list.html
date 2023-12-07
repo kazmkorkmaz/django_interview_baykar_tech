@@ -1,0 +1,54 @@
+{% extends 'baykar_tech_uav_rental/base/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}UAV List{% endblock %}
+
+{% block site_css %}
+
+{% endblock %}
+
+{% block content %}
+<h2>UAV List</h2>
+<hr>
+
+
+{% include 'baykar_tech_uav_rental/include/filter.html' with queryset=uav_filter.form %}
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <p class="text-end">
+            <a href="{% url 'uav_add' %}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add UAV</a>
+        </p>
+        <tr>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if uavs %}
+        {% for uav in uavs %}
+        <tr>
+            <td>{{ uav.brand }}</td>
+            <td>{{ uav.model }}</td>
+            <td>{{ uav.weight }}</td>
+            <td>{{ uav.category.name }}</td>
+            <td>
+                <a href="{% url 'uav_update' slug=uav.slug %}" class="btn btn-warning btn-sm">
+                    <i class="fas fa-edit"></i> Update
+                </a>
+                <a href="{% url 'uav_delete' slug=uav.slug %}" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i> Delete
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+
+{% include 'baykar_tech_uav_rental/include/pagination.html' with queryset=uavs %}
+{% endblock %}
